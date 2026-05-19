@@ -19,6 +19,30 @@
           "name": "Bob Jones",
           "photo": "https://i.pravatar.cc/150?u=bob",
           "description": "Focuses on transparency and community."
+        },
+        {
+          "id": "p3",
+          "name": "Kavitha V",
+          "photo": "https://i.pravatar.cc/150?u=kavitha",
+          "description": "Dedicated to residents welfare and community services."
+        },
+        {
+          "id": "p4",
+          "name": "Nagarjuna T",
+          "photo": "https://i.pravatar.cc/150?u=nagarjuna",
+          "description": "Experienced leader with focus on infrastructure development."
+        },
+        {
+          "id": "p5",
+          "name": "Deepthi S",
+          "photo": "https://i.pravatar.cc/150?u=deepthi",
+          "description": "Dedicated to residents welfare and community services."
+        },
+        {
+          "id": "p6",
+          "name": "Sunil Kumar V",
+          "photo": "https://i.pravatar.cc/150?u=sunil",
+          "description": "Experienced leader with focus on infrastructure development."
         }
       ]
     },
@@ -31,6 +55,18 @@
           "name": "Charlie Brown",
           "photo": "https://i.pravatar.cc/150?u=charlie",
           "description": "Dedicated to harmony and resident welfare."
+        },
+        {
+          "id": "vp2",
+          "name": "Suresh Kumar M",
+          "photo": "https://i.pravatar.cc/150?u=suresh",
+          "description": "Experienced leader with focus on infrastructure development."
+        },
+        {
+          "id": "vp3",
+          "name": "Kavitha V",
+          "photo": "https://i.pravatar.cc/150?u=kavitha",
+          "description": "Dedicated to residents welfare and community services."
         }
       ]
     },
@@ -49,17 +85,74 @@
     {
       "id": "finance",
       "title": "Finance Manager",
-      "candidates": []
+      "candidates": [
+        {
+          "id": "f1",
+          "name": "John Doe",
+          "photo": "https://i.pravatar.cc/150?u=john",
+          "description": "Experienced leader with focus on financial management."
+        },
+        {
+          "id": "f2",
+          "name": "Suresh Kumar M",
+          "photo": "https://i.pravatar.cc/150?u=suresh",
+          "description": "Experienced leader with focus on infrastructure development."
+        },
+        {
+          "id": "f3",
+          "name": "Kavitha V",
+          "photo": "https://i.pravatar.cc/150?u=kavitha",
+          "description": "Dedicated to residents welfare and community services."
+        }
+      ]
     },
     {
       "id": "purchase",
       "title": "Purchase Manager",
-      "candidates": []
+      "candidates": [
+        {
+          "id": "p1",
+          "name": "John Doe",
+          "photo": "https://i.pravatar.cc/150?u=john",
+          "description": "Experienced leader with focus on financial management."
+        },
+        {
+          "id": "p2",
+          "name": "Suresh Kumar M",
+          "photo": "https://i.pravatar.cc/150?u=suresh",
+          "description": "Experienced leader with focus on infrastructure development."
+        },
+        {
+          "id": "p3",
+          "name": "Kavitha V",
+          "photo": "https://i.pravatar.cc/150?u=kavitha",
+          "description": "Dedicated to residents welfare and community services."
+        }
+      ]
     },
     {
       "id": "festival",
       "title": "Festival/Celebration Manager",
-      "candidates": []
+      "candidates": [
+        {
+          "id": "f1",
+          "name": "John Doe",
+          "photo": "https://i.pravatar.cc/150?u=john",
+          "description": "Experienced leader with focus on financial management."
+        },
+        {
+          "id": "f2",
+          "name": "Suresh Kumar M",
+          "photo": "https://i.pravatar.cc/150?u=suresh",
+          "description": "Experienced leader with focus on infrastructure development."
+        },
+        {
+          "id": "f3",
+          "name": "Kavitha V",
+          "photo": "https://i.pravatar.cc/150?u=kavitha",
+          "description": "Dedicated to residents welfare and community services."
+        }
+      ]
     }
   ]
 }
