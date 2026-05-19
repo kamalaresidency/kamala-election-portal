@@ -13,9 +13,16 @@ const Storage = {
             });
             this.config = await res.json();
             
-            const localConfig = localStorage.getItem('election_config');
-            if (localConfig) {
-                this.config = JSON.parse(localConfig);
+            // Only allow LocalStorage overrides on local development (localhost/127.0.0.1).
+            // On production (e.g. GitHub Pages), always use the server's config.json as the source of truth.
+            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            if (isLocal) {
+                const localConfig = localStorage.getItem('election_config');
+                if (localConfig) {
+                    this.config = JSON.parse(localConfig);
+                }
+            } else {
+                localStorage.removeItem('election_config');
             }
         } catch (e) {
             console.error("Failed to load config.json", e);
