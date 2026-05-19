@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Apartment Election Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-header">
+        <div class="header-content">
+            <h1>Admin Panel</h1>
+            <div class="header-controls">
+                <button id="theme-toggle" class="btn-icon">🌙</button>
+                <a href="index.html" class="btn-link">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="login-section" class="glass-card fade-in">
+            <h2>Admin Login</h2>
+            <p class="text-small mb-1">Default password is 'admin'</p>
+            <div class="input-group">
+                <label for="admin-password">Password</label>
+                <input type="password" id="admin-password" placeholder="Enter admin password">
+            </div>
+            <button id="login-btn" class="btn-primary">Login</button>
+            <div id="login-error" class="error-msg"></div>
+        </div>
+
+        <div id="admin-dashboard" class="hidden fade-in">
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="tab-results">Live Results</button>
+                    <button class="tab-btn" data-tab="tab-logs">Vote Log</button>
+                    <button class="tab-btn" data-tab="tab-settings">Settings</button>
+                </div>
+
+                <div class="tab-content active" id="tab-results">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h2>Live Results</h2>
+                            <button id="download-results-csv-btn" class="btn-primary" style="width: auto;">Download
+                                Results CSV</button>
+                        </div>
+                        <div id="live-results-container" class="dashboard-grid mt-1">
+                            <!-- Dynamic live results -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-logs">
+                    <div class="dashboard-grid mb-2">
+                        <div class="glass-card stat-card">
+                            <h3>Total Votes</h3>
+                            <p id="total-votes-count" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h2>Votes Log</h2>
+                            <button id="download-csv-btn" class="btn-primary" style="width: auto;">Download Full Log
+                                CSV</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="votes-table" class="glass-table">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Name</th>
+                                        <th>Flat</th>
+                                        <th>Selections</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="votes-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-settings">
+                    <div class="glass-card action-card mb-2">
+                        <h3>Dangerous Actions</h3>
+                        <button id="reset-election-btn" class="btn-danger">Reset Election</button>
+                    </div>
+
+                    <div class="glass-card mt-2">
+                        <h2>Manage Election Configuration</h2>
+                        <p class="text-small mb-1">Modify titles, dates, or GitHub settings.</p>
+                        <div id="config-editor">
+                            <!-- Dynamic fields -->
+                        </div>
+                        <button id="save-config-btn" class="btn-primary mt-1">Save Config</button>
+                    </div>
+
+                    <div class="glass-card mt-2">
+                        <h2>Manage Positions & Candidates</h2>
+                        <div id="admin-positions-container"></div>
+                        <button id="add-position-btn" class="btn-secondary mt-1">Add Position</button>
+                        <button id="save-candidates-btn" class="btn-primary mt-1">Save Positions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Powered by KR Election Portal</p>
+    </footer>
+
+    <script src="storage.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

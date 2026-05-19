@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Election Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-header">
+        <div class="header-content">
+            <div>
+                <h1 id="apartment-name">Apartment Name</h1>
+                <p id="election-banner">Election Banner</p>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="btn-icon">🌙</button>
+                <a href="admin.html" class="btn-link">Admin</a>
+            </div>
+        </div>
+        <div id="countdown-container" class="countdown">
+            Voting closes in: <span id="countdown-timer">00:00:00</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="voter-details-card" class="glass-card fade-in">
+            <h2>Voter Information</h2>
+            <div class="input-group">
+                <label for="voter-name">Full Name *</label>
+                <input type="text" id="voter-name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label for="flat-number">Flat Number *</label>
+                <input type="text" id="flat-number" placeholder="e.g., A-101" required>
+            </div>
+            <button id="start-voting-btn" class="btn-primary">Proceed to Vote</button>
+            <div id="voter-error" class="error-msg"></div>
+        </div>
+
+        <div id="voting-section" class="hidden fade-in">
+            <div id="positions-container"></div>
+        </div>
+
+        <div id="success-section" class="hidden fade-in glass-card text-center">
+            <h2 class="success-text" style="color: var(--success);">Vote Submitted Successfully!</h2>
+            <p>Thank you for participating in the election.</p>
+            <button onclick="location.reload()" class="btn-secondary mt-2">Return Home</button>
+        </div>
+    </main>
+
+    <div id="selection-bar" class="glass-bar hidden">
+        <div class="selection-info">
+            Selected: <span id="selection-count">0</span>
+        </div>
+        <button id="submit-vote-btn" class="btn-accent" disabled>Submit Vote</button>
+    </div>
+
+    <footer>
+        <p>Powered by KR Election Portal</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="storage.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

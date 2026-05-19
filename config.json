@@ -1,0 +1,65 @@
+{
+  "apartmentName": "Kamala Residency",
+  "electionBanner": "Annual Committee Election 2026",
+  "votingCloses": "2026-12-31T23:59:59",
+  "googleAppUrl": "https://script.google.com/macros/s/AKfycbwuGT7JH11ZxZe4nevpJLRLgn155iyXVuYnkdlO0FjddjCJVoE4P_OeAK93BHFjGSZMbw/exec",
+  "positions": [
+    {
+      "id": "president",
+      "title": "President",
+      "candidates": [
+        {
+          "id": "p1",
+          "name": "Alice Smith",
+          "photo": "https://i.pravatar.cc/150?u=alice",
+          "description": "Experienced leader with 5 years in committee."
+        },
+        {
+          "id": "p2",
+          "name": "Bob Jones",
+          "photo": "https://i.pravatar.cc/150?u=bob",
+          "description": "Focuses on transparency and community."
+        }
+      ]
+    },
+    {
+      "id": "vice_president",
+      "title": "Vice President",
+      "candidates": [
+        {
+          "id": "vp1",
+          "name": "Charlie Brown",
+          "photo": "https://i.pravatar.cc/150?u=charlie",
+          "description": "Dedicated to harmony and resident welfare."
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance Manager",
+      "candidates": [
+        {
+          "id": "m1",
+          "name": "David Wilson",
+          "photo": "https://i.pravatar.cc/150?u=david",
+          "description": "Civil engineer, perfect for maintenance."
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Finance Manager",
+      "candidates": []
+    },
+    {
+      "id": "purchase",
+      "title": "Purchase Manager",
+      "candidates": []
+    },
+    {
+      "id": "festival",
+      "title": "Festival/Celebration Manager",
+      "candidates": []
+    }
+  ]
+}
