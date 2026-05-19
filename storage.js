@@ -3,7 +3,14 @@ const Storage = {
     
     async init() {
         try {
-            const res = await fetch('config.json');
+            // Use cache-busting timestamp and no-store headers to guarantee fresh data
+            const res = await fetch(`config.json?t=${Date.now()}`, {
+                cache: 'no-store',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache'
+                }
+            });
             this.config = await res.json();
             
             const localConfig = localStorage.getItem('election_config');
