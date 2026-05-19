@@ -37,13 +37,30 @@ function setupUI() {
             return;
         }
 
+        // Validate Name (only letters and spaces, no numbers or special characters)
+        const nameRegex = /^[a-zA-Z\s]+$/;
+        if (!nameRegex.test(name)) {
+            document.getElementById('voter-error').textContent = 'Name should only contain letters and spaces (no numbers or special characters).';
+            return;
+        }
+
+        // Validate Flat Number (G01-G05, 101-105, 201-205, 301-305, 401-405)
+        const flatRegex = /^([gG]0[1-5]|[1-4]0[1-5])$/;
+        if (!flatRegex.test(flat)) {
+            document.getElementById('voter-error').textContent = 'Invalid Flat Number. Allowed flats: G01-G05, 101-105, 201-205, 301-305, 401-405.';
+            return;
+        }
+
+        // Normalize Flat Number to Uppercase (e.g., g01 -> G01)
+        const normalizedFlat = flat.toUpperCase();
+
         const btn = document.getElementById('start-voting-btn');
         btn.textContent = 'Checking...';
         btn.disabled = true;
 
         try {
             const votes = await Storage.getVotes();
-            const alreadyVoted = votes.some(v => v.flatNumber.toLowerCase() === flat.toLowerCase());
+            const alreadyVoted = votes.some(v => v.flatNumber.toLowerCase() === normalizedFlat.toLowerCase());
             if (alreadyVoted) {
                 document.getElementById('voter-error').textContent = 'This Flat Number has already voted. Contact Admin if you need help';
                 btn.textContent = 'Proceed to Vote';
@@ -58,7 +75,7 @@ function setupUI() {
         btn.disabled = false;
 
         voterInfo.name = name;
-        voterInfo.flatNumber = flat;
+        voterInfo.flatNumber = normalizedFlat;
         document.getElementById('voter-error').textContent = '';
 
         document.getElementById('voter-details-card').classList.add('hidden');
